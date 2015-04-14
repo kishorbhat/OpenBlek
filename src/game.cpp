@@ -494,30 +494,20 @@ void keyPressed(unsigned char key, int x, int y)
 
 void myMouseStat(int button,int state,int x, int y)
 {
-    if (highlight_lvls)
-    {
-        lvlSelect = true;
-        resetAll();
-    }
-
-    if (highlight_play)
-    {
-        play_game = true;
-        resetAll();
-    }
-
-    if(!flag)
-    {
-        if(temp_bit)
-        {
-            temp_bit=0;
-        }
-        resetAll();
-        flag=1;
-    }
-
     if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
     {
+        if (highlight_lvls)
+        {
+            lvlSelect = true;
+            resetAll();
+        }
+    
+        if (highlight_play)
+        {
+            play_game = true;
+            resetAll();
+        }
+    
         if(!flag)
         {
             if(temp_bit)
