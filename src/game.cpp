@@ -22,6 +22,7 @@ int red_black;
 int collected;
 bool next_level;
 bool start_game;
+bool play_game;
 bool lvlSelect = false;
 bool dispInstr;
 int level;
@@ -380,7 +381,7 @@ void myDisplay()
 
     else if(lvlSelect)
     {
-
+        drawText("Level Select", 200, 500);
     }
 
     else if(next_level)
@@ -390,7 +391,7 @@ void myDisplay()
         else
             drawText("You're Done!!",250.0,300.0);
     }
-    else
+    else if (play_game)
     {
         drawCircles();
         if(flag)
@@ -482,10 +483,39 @@ void keyPressed(unsigned char key, int x, int y)
                 next_level=true;
         }   
     }
+
+    if (key == 'n')
+    {
+        if(level)
+            level--;
+        resetAll();
+    }
 }
 
 void myMouseStat(int button,int state,int x, int y)
 {
+    if (highlight_lvls)
+    {
+        lvlSelect = true;
+        resetAll();
+    }
+
+    if (highlight_play)
+    {
+        play_game = true;
+        resetAll();
+    }
+
+    if(!flag)
+    {
+        if(temp_bit)
+        {
+            temp_bit=0;
+        }
+        resetAll();
+        flag=1;
+    }
+
     if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
     {
         if(!flag)
