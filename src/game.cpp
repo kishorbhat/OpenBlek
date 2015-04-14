@@ -21,6 +21,7 @@ int red_black;
 int collected;
 bool next_level;
 bool start_game;
+bool lvlSelect = false;
 bool dispInstr;
 int level;
 int num_circles;
@@ -31,9 +32,8 @@ bool leftwall,leftwalli;
 bool rightwall,rightwalli;
 bool reflectionl;
 bool reflectionr;
-bool highlight_instr = false;
+bool highlight_lvls = false;
 bool highlight_play = false;
-char numbers[][10] = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"};
 
 class Circle
 {
@@ -351,14 +351,9 @@ void myDisplay()
     if(start_game)
     {
       drawText("Blek",250.0,350.0);
-      glColor3f(1.0, 0.0, 0.0);
-      glBegin(GL_LINES);
-      glVertex3f(250.0f, 345.0f, 0.0f);
-      glVertex3f(475.0f, 345.0f, 5.0f);
-      glEnd();
 
       drawText("Level Select",220.0,300.0);
-      if (highlight_instr)
+      if (highlight_lvls)
         glColor3f(0.0, 1.0, 0.0);
       else
         glColor3f(1.0, 0.0, 0.0);
@@ -376,6 +371,11 @@ void myDisplay()
       glVertex3f(250.0f, 245.0f, 0.0f);
       glVertex3f(480.0f, 245.0f, 5.0f);
       glEnd();
+    }
+
+    else if(lvlSelect)
+    {
+
     }
 
     else if(next_level)
@@ -494,11 +494,6 @@ void myPressedMove(int x,int y)
 {
     if(flag)
         addValue(x,y);
-    if(start_game)
-    {
-        if(x >= 220 && x <= 820 && y >= 295 && y <= 325)
-            dispInstr = true;
-    }
 }
 
 void mouse_motion(int x, int y)
@@ -506,9 +501,9 @@ void mouse_motion(int x, int y)
     if (start_game)
     {
         if (x >= 220 && x <= 820 && y >= 295 && y <= 325)
-            highlight_instr = true;
+            highlight_lvls = true;
         else
-            highlight_instr = false;
+            highlight_lvls = false;
 
         if (x >= 250 && x <= 480 && y >= 345 && y <= 365)
             highlight_play = true;
