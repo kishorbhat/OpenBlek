@@ -66,7 +66,9 @@ void draw_string(std::string str)
 void circle(float x, float y, float r, int segments, bool obs)
 {
     glBegin( GL_TRIANGLE_FAN );
-        if(obs==false)
+        if(obs==false && lvlSelect==1)
+            glColor3f(1.0, 1.0, 0.0);
+        else if(obs==false)
             glColor3f(1.0, 0.0, 0.0);
         else
             glColor3f(0.0, 0.0, 0.0);
@@ -381,7 +383,20 @@ void myDisplay()
 
     else if(lvlSelect)
     {
-        drawText("Level Select", 200, 500);
+        
+        circles[0].setVal(0.167*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
+        circles[1].setVal(0.500*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
+        circles[2].setVal(0.833*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
+        circles[3].setVal(0.167*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
+        circles[4].setVal(0.500*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
+        circles[5].setVal(0.833*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
+        circles[6].setVal(0.167*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
+        circles[7].setVal(0.500*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
+        circles[8].setVal(0.833*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
+        num_circles=9;
+        drawCircles();
+        drawText("1", 100, 400);
+
     }
 
     else if(next_level)
