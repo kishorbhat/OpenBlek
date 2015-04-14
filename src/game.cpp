@@ -8,6 +8,7 @@
 #define WIDTH 600
 #define HEIGHT 600
 #define SEGMENTS 20000
+#define MAX_LEVELS 6
 using namespace std;
 double arr[5000][2];
 int z=0;
@@ -34,7 +35,6 @@ bool reflectionl;
 bool reflectionr;
 bool highlight_lvls = false;
 bool highlight_play = false;
-
 class Circle
 {
 public:
@@ -155,6 +155,11 @@ void resetAll()
     rightwall=true;
     reflectionl=false;
     reflectionr=false;
+    if(level==MAX_LEVELS)
+    {
+        level=0;
+        start_game=true;
+    }
     genLevel();
 }
 
@@ -380,7 +385,10 @@ void myDisplay()
 
     else if(next_level)
     {
-        drawText("Next level",250.0,300.0);
+        if(level!=MAX_LEVELS)
+            drawText("Next level",250.0,300.0);
+        else
+            drawText("You're Done!!",250.0,300.0);
     }
     else
     {
@@ -461,8 +469,18 @@ void keyPressed(unsigned char key, int x, int y)
 {
     if (key == 'm')
     {
-        level++;
-        resetAll();
+        if(level==MAX_LEVELS)
+        {
+            resetAll();
+        }
+        else
+        {
+            level++;
+            if(level<MAX_LEVELS)
+                resetAll();
+            else 
+                next_level=true;
+        }   
     }
 }
 
