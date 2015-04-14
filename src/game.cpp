@@ -385,6 +385,14 @@ void myDisplay()
     else
     {
         drawCircles();
+        if(flag)
+        {
+            drawLines(z-1);
+            blackptr=0;
+            ptr=0;
+            red_black=1;
+            ptrsave=z;
+        }
         if(!flag)
         {
             if(!temp_bit)
@@ -393,7 +401,6 @@ void myDisplay()
                 glPushMatrix();
                     if(red_black==0)
                     {
-                    	//cout<<red_black<<"\n";
                         if(ptr==z-1)
                         {
                             red_black=1;
