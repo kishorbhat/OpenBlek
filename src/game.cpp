@@ -479,6 +479,11 @@ void myDisplay()
     if(start_game)
     {
       drawText("Blek",0.417*WIDTH,0.583*HEIGHT);
+      
+      drawText("R : Return To Main Menu",0.05*WIDTH,0.1*HEIGHT);
+      drawText("N : Go to Previous Level",0.3*WIDTH,0.1*HEIGHT);
+      drawText("M : Go to Next Level",0.595*WIDTH,0.1*HEIGHT);
+      drawText("Q : Quit Game",0.890*WIDTH,0.1*HEIGHT);
 
       drawText("Level Select",0.417*WIDTH,0.5*HEIGHT);
       if (highlight_lvls)
