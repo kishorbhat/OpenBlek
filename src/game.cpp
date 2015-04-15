@@ -185,19 +185,19 @@ void genLevel()
         circles[3].setVal(0.5*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
         circles[4].setVal(0.75*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
 
-        circles[5].setVal(0.5*WIDTH, 0.7875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
-        circles[6].setVal(0.4*WIDTH, 0.6875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
+        circles[5].setVal(0.5*WIDTH, 0.7875*HEIGHT, 0.01*WIDTH+0.01*HEIGHT, false);
+        circles[6].setVal(0.44*WIDTH, 0.6875*HEIGHT, 0.01*WIDTH+0.01*HEIGHT, false);
 
-        circles[7].setVal(0.5*WIDTH, 0.2125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
-        circles[8].setVal(0.6*WIDTH, 0.3125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
+        circles[7].setVal(0.5*WIDTH, 0.2125*HEIGHT, 0.01*WIDTH+0.01*HEIGHT, false);
+        circles[8].setVal(0.56*WIDTH, 0.3125*HEIGHT, 0.01*WIDTH+0.01*HEIGHT, false);
 
-        circles[9].setVal(0.75*WIDTH, 0.7875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
-        circles[10].setVal(0.85*WIDTH, 0.6875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
-        circles[11].setVal(0.75*WIDTH, 0.5875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
+        circles[9].setVal(0.75*WIDTH, 0.7875*HEIGHT, 0.01*WIDTH+0.01*HEIGHT,false );
+        circles[10].setVal(0.81*WIDTH, 0.6875*HEIGHT, 0.01*WIDTH+0.01*HEIGHT,false );
+        circles[11].setVal(0.75*WIDTH, 0.5875*HEIGHT, 0.01*WIDTH+0.01*HEIGHT,false );
 
-        circles[12].setVal(0.25*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true);
-        circles[13].setVal(0.5*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
-        circles[14].setVal(0.75*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
+        circles[12].setVal(0.25*WIDTH, 0.88*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true);
+        circles[13].setVal(0.5*WIDTH, 0.88*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
+        circles[14].setVal(0.75*WIDTH, 0.88*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
         collected=7;
         num_circles=15;
     }
@@ -668,8 +668,6 @@ void myPressedMove(int x,int y)
 void mouse_motion(int x, int y)
 {
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
-    cout << cg_x << cg_y << "\n";
-
     if (start_game)
     {
         if (cg_x >= 0.367*WIDTH && cg_x <= 1.367*WIDTH && cg_y >= 0.492*HEIGHT && cg_y <= 0.542*HEIGHT)
@@ -689,7 +687,6 @@ void mouse_motion(int x, int y)
     	{
     		if (inCircle(cg_x, cg_y, circles[i].x, circles[i].y))
     		{
-    			// cout << cg_x <<" "<< cg_y << "\n";
     			circle_choose &= (int) pow(2, i);
                 break;
     		}
