@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/unistd.h>
-#define WIDTH 1920  
-#define HEIGHT 1080
+#define WIDTH 1366  
+#define HEIGHT 768
 #define SEGMENTS 10000
 #define MAX_LEVELS 9
 using namespace std;
@@ -524,9 +524,9 @@ void myDisplay()
     else if(next_level)
     {
         if(level!=MAX_LEVELS)
-            drawText("Next level",250.0,300.0);
+            drawText("Next level",0.417*WIDTH,0.500*HEIGHT);
         else
-            drawText("You're Done!!",250.0,300.0);
+            drawText("You're Done!!",0.417*WIDTH,0.500*HEIGHT);
     }
     else if (play_game)
     {
@@ -630,13 +630,28 @@ void myMouseStat(int button,int state,int x, int y)
         if (highlight_lvls)
         {
             lvlSelect = true;
+            highlight_lvls = false;
             resetAll();
         }
     
-        if (highlight_play)
+        else if (highlight_play)
         {
             play_game = true;
+            highlight_play = false;
             resetAll();
+        }
+
+        else if (lvlSelect)
+        {
+            int fl = (int)((float) log10(circle_choose) / (float) log10(2));
+            cout << fl << "\n";
+            if (fl <= 8)
+            {
+                level = fl;
+                play_game = true;
+                lvlSelect = false;
+                resetAll();
+            }
         }
     
         if(!flag)
@@ -689,7 +704,6 @@ void mouse_motion(int x, int y)
     	{
     		if (inCircle(cg_x, cg_y, circles[i].x, circles[i].y))
     		{
-    			// cout << cg_x <<" "<< cg_y << "\n";
     			circle_choose &= (int) pow(2, i);
                 break;
     		}
