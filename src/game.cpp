@@ -659,14 +659,15 @@ void myPressedMove(int x,int y)
 
 void mouse_motion(int x, int y)
 {
+    int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
     if (start_game)
     {
-        if (x >= 220 && x <= 820 && y >= 295 && y <= 325)
+        if (cg_x >= 0.367*WIDTH && cg_x <= 1.367*WIDTH && cg_y >= 0.492*HEIGHT && cg_y <= 0.542*HEIGHT)
             highlight_lvls = true;
         else
             highlight_lvls = false;
 
-        if (x >= 250 && x <= 480 && y >= 345 && y <= 365)
+        if (cg_x >= 0.417*WIDTH && cg_x <= 0.8*WIDTH && cg_y >= 0.575*HEIGHT && cg_y <= 0.608*HEIGHT)
             highlight_play = true;
         else
             highlight_play = false;
@@ -674,7 +675,6 @@ void mouse_motion(int x, int y)
 
     if (lvlSelect)
     {
-        int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
     	for (int i = 0; i < 9; i++)
     	{
     		if (inCircle(cg_x, cg_y, circles[i].x, circles[i].y))
@@ -714,6 +714,7 @@ int main( int argc, char ** argv)
     glutInitWindowPosition( 100, 100);
     glutInitWindowSize(WIDTH,HEIGHT);
     glutCreateWindow( "Testing");
+    // glutFullScreen();
     init();
     glutDisplayFunc(myDisplay);
     glutMouseFunc(myMouseStat);
