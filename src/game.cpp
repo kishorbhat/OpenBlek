@@ -24,6 +24,7 @@ bool next_level;
 bool start_game;
 bool play_game;
 bool lvlSelect = false;
+int circle_choose = 511;
 bool dispInstr;
 int level;
 int num_circles;
@@ -195,6 +196,14 @@ bool checkCollision(int xp, int yp)
         }
     }
     return false;
+}
+
+bool inCircle(int xp, int yp, float xc, float yc)
+{
+	double r = 0.083 * WIDTH;
+	if (sqrt(pow((xc - xp), 2) + pow((yc - yp), 2)) <= r)
+		return true;
+	return false;
 }
 
 void drawText(char const *str,float x,float y)
@@ -397,6 +406,49 @@ void myDisplay()
         drawCircles();
         drawText("1", 100, 400);
 
+        switch(circle_choose)
+        {
+        	case 1:
+        	drawText("Baby Steps", 200, 500);
+        	break;
+
+        	case 2:
+        	drawText("Another Ball", 200, 500);
+        	break;
+
+        	case 4:
+        	drawText("Level 3", 200, 500);
+        	break;
+
+        	case 8:
+        	drawText("Level 4", 200, 500);
+        	break;
+
+        	case 16:
+        	drawText("Level 5", 200, 500);
+        	break;
+
+        	case 32:
+        	drawText("Level 6", 200, 500);
+        	break;
+
+        	case 64:
+        	drawText("Level 7", 200, 500);
+        	break;
+
+        	case 128:
+        	drawText("Level 8", 200, 500);
+        	break;
+
+        	case 256:
+        	drawText("Level 9", 200, 500);
+        	break;
+
+        	default:
+        	drawText("Level Select", 200, 500);
+        	break;
+        }
+
     }
 
     else if(next_level)
@@ -468,12 +520,6 @@ void myDisplay()
                     }
                 glPopMatrix();
             }
-        }
-        if(temp_bit)
-        {
-            // drawText("Project",50.0,500.0,0);
-            // drawText("Welcome",250.0,300.0,1);
-            // drawText("Drag the Mouse Any Where",10.0,200.0,2);
         }
     }
     glutSwapBuffers();
@@ -564,6 +610,19 @@ void mouse_motion(int x, int y)
             highlight_play = false;
     }
 
+    if (lvlSelect)
+    {
+    	for (int i = 0; i < 9; i++)
+    	{
+    		if (inCircle(x, y, circles[i].x, circles[i].y))
+    		{
+    			cout << circle_choose;
+    			circle_choose &= (int) pow(2, i);
+    		}
+    	    //else
+    		//	circle_choose = 511;
+    	}
+    }
 }
 
 void myTimer(int t)
