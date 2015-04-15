@@ -492,7 +492,7 @@ void myDisplay()
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
       glVertex3f(0.417*WIDTH, 0.492*HEIGHT, 0.0f);
-      glVertex3f(0.48*WIDTH, 0.492*HEIGHT, 0.0f);
+      glVertex3f(0.495*WIDTH, 0.492*HEIGHT, 0.0f);
       glEnd();
 
       drawText("Play!",0.417*WIDTH,0.417*HEIGHT);
@@ -502,7 +502,7 @@ void myDisplay()
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
       glVertex3f(0.417*WIDTH, 0.408*HEIGHT, 0.0f);
-      glVertex3f(0.495*WIDTH, 0.408*HEIGHT, 0.0f);
+      glVertex3f(0.450*WIDTH, 0.408*HEIGHT, 0.0f);
       glEnd();
     }
 
