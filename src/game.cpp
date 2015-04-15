@@ -209,7 +209,7 @@ void resetAll()
     memset(arr,0,5000);
     z=0;
     next_level=false;
-    if(play_game)
+    if(play_game||lvlSelect)
         start_game=false;
     transx=0;
     transy=0;
@@ -225,6 +225,7 @@ void resetAll()
     {
         level=0;
         start_game=true;
+        play_game=lvlSelect=false;
     }
     genLevel();
 }
@@ -676,7 +677,7 @@ void mouse_motion(int x, int y)
         else
             highlight_lvls = false;
 
-        if (cg_x >= 0.417*WIDTH && cg_x <= 0.8*WIDTH && cg_y >= 0.575*HEIGHT && cg_y <= 0.608*HEIGHT)
+        if (cg_x >= 0.417*WIDTH && cg_x <= 0.8*WIDTH && cg_y >= 0.417*HEIGHT && cg_y <= 0.467*HEIGHT)
             highlight_play = true;
         else
             highlight_play = false;
