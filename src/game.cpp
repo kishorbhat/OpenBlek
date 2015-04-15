@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/unistd.h>
-#define WIDTH 600
-#define HEIGHT 600
+#define WIDTH 1920  
+#define HEIGHT 1080
 #define SEGMENTS 10000
 #define MAX_LEVELS 9
 using namespace std;
@@ -56,7 +56,7 @@ public:
     }
 }circles[100];
 
-void draw_string(std::string str)
+void draw_string(string str)
 {
     for(unsigned int i=0;i<str.length();i++)
     {
@@ -429,85 +429,85 @@ void myDisplay()
     glClear( GL_COLOR_BUFFER_BIT );
     if(start_game)
     {
-      drawText("Blek",250.0,350.0);
+      drawText("Blek",0.417*WIDTH,0.583*HEIGHT);
 
-      drawText("Level Select",220.0,300.0);
+      drawText("Level Select",0.417*WIDTH,0.5*HEIGHT);
       if (highlight_lvls)
         glColor3f(0.0, 1.0, 0.0);
       else
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
-      glVertex3f(220.0f, 295.0f, 0.0f);
-      glVertex3f(820.0f, 295.0f, 5.0f);
+      glVertex3f(0.367*WIDTH, 0.492*HEIGHT, 0.0f);
+      glVertex3f(1.367*WIDTH, 0.492*HEIGHT, 0.0f);
       glEnd();
 
-      drawText("Play!",250.0,250.0);
+      drawText("Play!",0.417*WIDTH,0.417*HEIGHT);
       if (highlight_play)
         glColor3f(0.0, 1.0, 0.0);
       else
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
-      glVertex3f(250.0f, 245.0f, 0.0f);
-      glVertex3f(480.0f, 245.0f, 5.0f);
+      glVertex3f(0.417*WIDTH, 0.408*HEIGHT, 0.0f);
+      glVertex3f(0.8*WIDTH, 0.408*HEIGHT, 0.0f);
       glEnd();
     }
 
     else if(lvlSelect)
     {
         
-        circles[0].setVal(0.167*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
-        circles[1].setVal(0.500*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
-        circles[2].setVal(0.833*WIDTH, 0.67*HEIGHT, 0.083*WIDTH, false);
-        circles[3].setVal(0.167*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
-        circles[4].setVal(0.500*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
-        circles[5].setVal(0.833*WIDTH, 0.417*HEIGHT, 0.083*WIDTH, false);
-        circles[6].setVal(0.167*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
-        circles[7].setVal(0.500*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
-        circles[8].setVal(0.833*WIDTH, 0.167*HEIGHT, 0.083*WIDTH, false);
+        circles[0].setVal(0.167*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[1].setVal(0.500*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[2].setVal(0.833*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[3].setVal(0.167*WIDTH, 0.417*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[4].setVal(0.500*WIDTH, 0.417*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[5].setVal(0.833*WIDTH, 0.417*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[6].setVal(0.167*WIDTH, 0.167*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[7].setVal(0.500*WIDTH, 0.167*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
+        circles[8].setVal(0.833*WIDTH, 0.167*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
         num_circles=9;
         drawCircles();
-        drawText("1", 100, 400);
+        drawText("1", 0.167*WIDTH, 0.67*HEIGHT);
 
         switch(circle_choose)
         {
         	case 1:
-        	drawText("Baby Steps", 200, 500);
+        	drawText("Baby Steps", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 2:
-        	drawText("Another Ball", 200, 500);
+        	drawText("Another Ball", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 4:
-        	drawText("Level 3", 200, 500);
+        	drawText("Level 3", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 8:
-        	drawText("Level 4", 200, 500);
+        	drawText("Level 4", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 16:
-        	drawText("Level 5", 200, 500);
+        	drawText("Level 5", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 32:
-        	drawText("Level 6", 200, 500);
+        	drawText("Level 6", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 64:
-        	drawText("Level 7", 200, 500);
+        	drawText("Level 7", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 128:
-        	drawText("Level 8", 200, 500);
+        	drawText("Level 8", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	case 256:
-        	drawText("Level 9", 200, 500);
+        	drawText("Level 9", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
 
         	default:
-        	drawText("Level Select", 200, 500);
+        	drawText("Level Select", 0.47*WIDTH, 0.833*HEIGHT);
         	break;
         }
 
@@ -660,6 +660,8 @@ void myPressedMove(int x,int y)
 void mouse_motion(int x, int y)
 {
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
+    cout << cg_x << cg_y << "\n";
+
     if (start_game)
     {
         if (cg_x >= 0.367*WIDTH && cg_x <= 1.367*WIDTH && cg_y >= 0.492*HEIGHT && cg_y <= 0.542*HEIGHT)
@@ -679,7 +681,7 @@ void mouse_motion(int x, int y)
     	{
     		if (inCircle(cg_x, cg_y, circles[i].x, circles[i].y))
     		{
-    			cout << cg_x << " "<< cg_y << "\n";
+    			// cout << cg_x <<" "<< cg_y << "\n";
     			circle_choose &= (int) pow(2, i);
                 break;
     		}
@@ -714,7 +716,7 @@ int main( int argc, char ** argv)
     glutInitWindowPosition( 100, 100);
     glutInitWindowSize(WIDTH,HEIGHT);
     glutCreateWindow( "Testing");
-    // glutFullScreen();
+    glutFullScreen();
     init();
     glutDisplayFunc(myDisplay);
     glutMouseFunc(myMouseStat);
