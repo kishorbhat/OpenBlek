@@ -1,3 +1,5 @@
+#ifndef DECLARATION_H_INCUDED
+#define DECLARATION_H_INCUDED
 #include <iostream>
 #include <string.h>
 #include <string>
@@ -61,8 +63,6 @@ string GetStdoutFromCommand(string);
 
 void findresoulution();
 
-void draw_string(string);
-
 void circle(float, float, float, int, bool);
 
 void genLevel();
@@ -100,3 +100,5 @@ void myPressedMove(int, int);
 void mouse_motion(int, int);
 
 void myTimer(int);
+
+#endif
