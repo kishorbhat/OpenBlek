@@ -497,7 +497,7 @@ void myDisplay()
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
       glVertex3f(0.417*WIDTH, 0.408*HEIGHT, 0.0f);
-      glVertex3f(0.45*WIDTH, 0.408*HEIGHT, 0.0f);
+      glVertex3f(0.495*WIDTH, 0.408*HEIGHT, 0.0f);
       glEnd();
     }
 
