@@ -1,11 +1,12 @@
 #include "../includes/declarations.h"
 
+// Main display function passed to glutMainLoop.
 void myDisplay()
 {
     glClear( GL_COLOR_BUFFER_BIT );
     if(start_game)
     {
-      drawText("Blek",0.417*WIDTH,0.583*HEIGHT);
+      drawStrokeText("BLEK",0.28*WIDTH,0.65*HEIGHT,0.0);
       
       drawText("R : Return To Main Menu",0.05*WIDTH,0.1*HEIGHT);
       drawText("N : Go to Previous Level",0.3*WIDTH,0.1*HEIGHT);
@@ -106,7 +107,7 @@ void myDisplay()
         if(level!=MAX_LEVELS)
             drawText("Next level",0.417*WIDTH,0.500*HEIGHT);
         else
-            drawText("You're Done!!",0.417*WIDTH,0.500*HEIGHT);
+            drawText("Thank you for playing.",0.417*WIDTH,0.500*HEIGHT);
     }
     else if (play_game)
     {

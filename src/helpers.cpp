@@ -1,5 +1,6 @@
 #include "../includes/declarations.h"
 
+//Function to reset all parameters involved in the game.
 void resetAll()
 {
     memset(arr,0,5000);
@@ -26,6 +27,7 @@ void resetAll()
     genLevel();
 }
 
+//Function to initiliaze to variables.
 void init()
 {
     glClearColor( 245.0, 245.0, 245.0, 1.0);
@@ -48,6 +50,7 @@ void init()
     genLevel();
 }
 
+//Functions to convert x and y co-ordinates provided by OpenGL mouse function into Euclidean ones. 
 float getOpenGLX(int x)
 {
     double ox = x/ (double)WIDTH*(WIDTH);
@@ -74,6 +77,7 @@ void addValue(int x,int y)
     }
 }
 
+//Detects which key is pressed and sets appropriate flags.
 void keyPressed(unsigned char key, int x, int y)
 {
     if (key == 'm')
@@ -122,6 +126,7 @@ void keyPressed(unsigned char key, int x, int y)
     }
 }
 
+//Function to check mouse activity.
 void myMouseStat(int button,int state,int x, int y)
 {
     if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
@@ -179,6 +184,7 @@ void myPressedMove(int x,int y)
         addValue(x,y);
 }
 
+//Function passed to passive mouse function to track user movement.
 void mouse_motion(int x, int y)
 {
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
@@ -210,6 +216,7 @@ void mouse_motion(int x, int y)
     }
 }
 
+//Timer function to update variables in realtime.
 void myTimer(int t)
 {
     if(ptr!=z&&red_black==0)

@@ -1,5 +1,6 @@
 #include "../includes/declarations.h"
 
+//Function to get output from stdout.
 string GetStdoutFromCommand(string cmd) 
 {
     string data;
@@ -17,6 +18,7 @@ string GetStdoutFromCommand(string cmd)
     return data;
 }
 
+//Function to retrieve current system resolution. This is later used to draw appropriately sized circles and lines.
 void findresoulution()
 {
     string s = "xrandr|grep '*'";

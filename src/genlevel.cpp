@@ -1,5 +1,6 @@
 #include "../includes/declarations.h"
 
+//Function to generate various levels of the program.
 void genLevel()
 {
     if(level==0)

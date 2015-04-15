@@ -1,5 +1,7 @@
 #include "../includes/declarations.h"
 
+//Function used to check collision with the balls. Attribute obstacle checks if the ball is the black or red.
+
 bool checkCollision(int xp, int yp)
 {
     int xc, yc, r;
@@ -30,6 +32,8 @@ bool checkCollision(int xp, int yp)
     }
     return false;
 }
+
+//Function used for Level Select Screen
 
 bool inCircle(int xp, int yp, float xc, float yc)
 {

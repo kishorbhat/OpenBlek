@@ -1,3 +1,4 @@
+/* OpenGL implementation of Blek*/
 #include "../includes/declarations.h"
 #include "helpers.cpp"
 #include "getresolution.cpp"
@@ -7,7 +8,7 @@
 #include "genlevel.cpp"
 #include "drawobjects.cpp"
 
-
+//Main Function of the program.
 int main( int argc, char ** argv)
 {
     findresoulution();

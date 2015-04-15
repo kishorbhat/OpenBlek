@@ -101,4 +101,6 @@ void mouse_motion(int, int);
 
 void myTimer(int);
 
+void drawStrokeText(char*string,int x,int y,int z);
+
 #endif
