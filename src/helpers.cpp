@@ -184,12 +184,12 @@ void mouse_motion(int x, int y)
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
     if (start_game)
     {
-        if (cg_x >= 0.367*WIDTH && cg_x <= 1.367*WIDTH && cg_y >= 0.492*HEIGHT && cg_y <= 0.542*HEIGHT)
+        if (cg_x >= 0.367*WIDTH && cg_x <=0.495*WIDTH && cg_y >= 0.492*HEIGHT && cg_y <= 0.542*HEIGHT)
             highlight_lvls = true;
         else
             highlight_lvls = false;
 
-        if (cg_x >= 0.417*WIDTH && cg_x <= 0.8*WIDTH && cg_y >= 0.417*HEIGHT && cg_y <= 0.467*HEIGHT)
+        if (cg_x >= 0.417*WIDTH && cg_x <= 0.450*WIDTH && cg_y >= 0.417*HEIGHT && cg_y <= 0.467*HEIGHT)
             highlight_play = true;
         else
             highlight_play = false;
