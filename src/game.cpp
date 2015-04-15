@@ -669,6 +669,28 @@ void keyPressed(unsigned char key, int x, int y)
             level--;
         resetAll();
     }
+
+    if (key == 'r')
+    {
+        cout << key << "\n";
+        start_game = true;
+        lvlSelect = false;
+        play_game = false;
+        level = 0;
+        resetAll();
+    }
+
+    if (key == 'q')
+    {
+        cout << "Thank you for playing!\n";
+        cout << "This game was designed by:\n";
+        cout << "Abraham Sebastian, 13IT103\n";
+        cout << "Kishor Bhat, 13IT114\n";
+        cout << "Chinmay Deshpande, 13IT210\n";
+        cout << "Sagar Ramprasad, 13IT233\n";
+        cout << "Pranav Konanur, 13IT228\n";
+        exit(0);
+    }
 }
 
 void myMouseStat(int button,int state,int x, int y)
