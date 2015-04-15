@@ -210,17 +210,17 @@ void genLevel()
     }
     if(level==7)
     {
-        circles[0].setVal(0.125*WIDTH, 0.125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, true);
-        circles[1].setVal(0.25*WIDTH, 0.25*HEIGHT,0.00935*WIDTH+0.00935*HEIGHT, true);
-        circles[2].setVal(0.25*WIDTH,0.3125*HEIGHT,0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[3].setVal(0.25*WIDTH, 0.1875*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[4].setVal(0.375*WIDTH, 0.375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, true);
-        circles[5].setVal(0.375*WIDTH, 0.4375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[6].setVal(0.375*WIDTH, 0.3125*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[7].setVal(0.5*WIDTH, 0.5*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, true);
-        circles[8].setVal(0.5*WIDTH, 0.5625*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[9].setVal(0.5*WIDTH, 0.4375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
-        circles[10].setVal(0.625*WIDTH, 0.625*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, true);
+        circles[0].setVal(0.125*WIDTH+0.08*WIDTH, 0.125*HEIGHT+0.08*WIDTH, 0.0125*WIDTH+0.0125*HEIGHT, true);
+        circles[1].setVal(0.25*WIDTH+0.08*WIDTH, 0.25*HEIGHT+0.08*WIDTH,0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[2].setVal(0.25*WIDTH+0.08*WIDTH,0.3125*HEIGHT+0.08*WIDTH,0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[3].setVal(0.25*WIDTH+0.08*WIDTH, 0.1875*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[4].setVal(0.375*WIDTH+0.08*WIDTH, 0.375*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[5].setVal(0.375*WIDTH+0.08*WIDTH, 0.4375*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[6].setVal(0.375*WIDTH+0.08*WIDTH, 0.3125*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[7].setVal(0.5*WIDTH+0.08*WIDTH, 0.5*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[8].setVal(0.5*WIDTH+0.08*WIDTH, 0.5625*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[9].setVal(0.5*WIDTH+0.08*WIDTH, 0.4375*HEIGHT+0.08*WIDTH, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[10].setVal(0.625*WIDTH+0.08*WIDTH, 0.625*HEIGHT+0.08*WIDTH, 0.0125*WIDTH+0.0125*HEIGHT, true);
         collected=6;
         num_circles=11;
 
