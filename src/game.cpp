@@ -162,46 +162,45 @@ void genLevel()
     }
     if(level==7)
     {
-        circles[0].setVal(0.125*WIDTH, 0.125*HEIGHT, 0.025*WIDTH, true);
-        circles[1].setVal(0.25*WIDTH, 0.25*HEIGHT,0.0187*WIDTH, true);
-        circles[2].setVal(0.25*WIDTH,0.3125*HEIGHT,0.0187*WIDTH, false);
-        circles[3].setVal(0.25*WIDTH, 0.1875*HEIGHT, 0.0187*WIDTH, false);
-        circles[4].setVal(0.375*WIDTH, 0.375*HEIGHT, 0.0187*WIDTH, true);
-        circles[5].setVal(0.375*WIDTH, 0.4375*HEIGHT, 0.0187*WIDTH, false);
-        circles[6].setVal(0.375*WIDTH, 0.3125*HEIGHT, 0.0187*WIDTH, false);
-        circles[7].setVal(0.5*WIDTH, 0.5*HEIGHT, 0.0187*WIDTH, true);
-        circles[8].setVal(0.5*WIDTH, 0.5625*HEIGHT, 0.0187*WIDTH, false);
-        circles[9].setVal(0.5*WIDTH, 0.4375*HEIGHT, 0.0187*WIDTH, false);
-        circles[10].setVal(0.625*WIDTH, 0.625*HEIGHT, 0.025*WIDTH, true);
+        circles[0].setVal(0.125*WIDTH, 0.125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, true);
+        circles[1].setVal(0.25*WIDTH, 0.25*HEIGHT,0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[2].setVal(0.25*WIDTH,0.3125*HEIGHT,0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[3].setVal(0.25*WIDTH, 0.1875*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[4].setVal(0.375*WIDTH, 0.375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[5].setVal(0.375*WIDTH, 0.4375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[6].setVal(0.375*WIDTH, 0.3125*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[7].setVal(0.5*WIDTH, 0.5*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, true);
+        circles[8].setVal(0.5*WIDTH, 0.5625*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[9].setVal(0.5*WIDTH, 0.4375*HEIGHT, 0.00935*WIDTH+0.00935*HEIGHT, false);
+        circles[10].setVal(0.625*WIDTH, 0.625*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, true);
         collected=6;
         num_circles=11;
 
     }
     if(level==8)
     {
-        circles[0].setVal(0.25*WIDTH, 0.3125*HEIGHT, 0.05*WIDTH, true);
-        circles[1].setVal(0.25*WIDTH, 0.6875*HEIGHT, 0.05*WIDTH, true);
-        circles[2].setVal(0.5*WIDTH, 0.3125*HEIGHT, 0.05*WIDTH, true);
-        circles[3].setVal(0.5*WIDTH, 0.6875*HEIGHT, 0.05*WIDTH, true);
-        circles[4].setVal(0.75*WIDTH, 0.6875*HEIGHT, 0.05*WIDTH, true);
+        circles[0].setVal(0.25*WIDTH, 0.3125*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
+        circles[1].setVal(0.25*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
+        circles[2].setVal(0.5*WIDTH, 0.3125*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
+        circles[3].setVal(0.5*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
+        circles[4].setVal(0.75*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH+0.025*HEIGHT, true);
 
-        circles[5].setVal(0.5*WIDTH, 0.7875*HEIGHT, 0.025*WIDTH, false);
-        circles[6].setVal(0.4*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH, false);
+        circles[5].setVal(0.5*WIDTH, 0.7875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
+        circles[6].setVal(0.4*WIDTH, 0.6875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
 
-        circles[7].setVal(0.5*WIDTH, 0.2125*HEIGHT, 0.025*WIDTH, false);
-        circles[8].setVal(0.6*WIDTH, 0.3125*HEIGHT, 0.025*WIDTH, false);
+        circles[7].setVal(0.5*WIDTH, 0.2125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
+        circles[8].setVal(0.6*WIDTH, 0.3125*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT, false);
 
-        circles[9].setVal(0.75*WIDTH, 0.7875*HEIGHT, 0.025*WIDTH,false );
-        circles[10].setVal(0.85*WIDTH, 0.6875*HEIGHT, 0.025*WIDTH,false );
-        circles[11].setVal(0.75*WIDTH, 0.5875*HEIGHT, 0.025*WIDTH,false );
+        circles[9].setVal(0.75*WIDTH, 0.7875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
+        circles[10].setVal(0.85*WIDTH, 0.6875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
+        circles[11].setVal(0.75*WIDTH, 0.5875*HEIGHT, 0.0125*WIDTH+0.0125*HEIGHT,false );
 
-        circles[12].setVal(0.25*WIDTH, 0.875*HEIGHT, 0.0125*WIDTH,true);
-        circles[13].setVal(0.5*WIDTH, 0.875*HEIGHT, 0.0125*WIDTH,true );
-        circles[14].setVal(0.75*WIDTH, 0.875*HEIGHT, 0.0125*WIDTH,true );
+        circles[12].setVal(0.25*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true);
+        circles[13].setVal(0.5*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
+        circles[14].setVal(0.75*WIDTH, 0.875*HEIGHT, 0.00625*WIDTH + 0.00625*HEIGHT,true );
         collected=7;
         num_circles=15;
     }
-
      
 }
 
@@ -210,7 +209,8 @@ void resetAll()
     memset(arr,0,5000);
     z=0;
     next_level=false;
-    start_game=false;
+    if(play_game)
+        start_game=false;
     transx=0;
     transy=0;
     num_circles=0;
@@ -437,8 +437,8 @@ void myDisplay()
       else
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
-      glVertex3f(0.367*WIDTH, 0.492*HEIGHT, 0.0f);
-      glVertex3f(1.367*WIDTH, 0.492*HEIGHT, 0.0f);
+      glVertex3f(0.417*WIDTH, 0.492*HEIGHT, 0.0f);
+      glVertex3f(0.48*WIDTH, 0.492*HEIGHT, 0.0f);
       glEnd();
 
       drawText("Play!",0.417*WIDTH,0.417*HEIGHT);
@@ -448,13 +448,12 @@ void myDisplay()
         glColor3f(1.0, 0.0, 0.0);
       glBegin(GL_LINES);
       glVertex3f(0.417*WIDTH, 0.408*HEIGHT, 0.0f);
-      glVertex3f(0.8*WIDTH, 0.408*HEIGHT, 0.0f);
+      glVertex3f(0.45*WIDTH, 0.408*HEIGHT, 0.0f);
       glEnd();
     }
 
     else if(lvlSelect)
     {
-        
         circles[0].setVal(0.167*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
         circles[1].setVal(0.500*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
         circles[2].setVal(0.833*WIDTH, 0.67*HEIGHT, 0.0415*WIDTH+0.0415*HEIGHT,false);
@@ -467,48 +466,56 @@ void myDisplay()
         num_circles=9;
         drawCircles();
         drawText("1", 0.167*WIDTH, 0.67*HEIGHT);
+        drawText("2", 0.5*WIDTH, 0.67*HEIGHT);
+        drawText("3", 0.833*WIDTH, 0.67*HEIGHT);
+        drawText("4", 0.167*WIDTH, 0.417*HEIGHT);
+        drawText("5", 0.5*WIDTH, 0.417*HEIGHT);
+        drawText("6", 0.833*WIDTH, 0.417*HEIGHT);
+        drawText("7", 0.167*WIDTH, 0.167*HEIGHT);
+        drawText("8", 0.5*WIDTH, 0.167*HEIGHT);
+        drawText("9", 0.833*WIDTH, 0.167*HEIGHT);
 
         switch(circle_choose)
         {
         	case 1:
-        	drawText("Baby Steps", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+                    drawText("Baby Steps", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 2:
-        	drawText("Another Ball", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 2:
+                    drawText("Far Apart", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 4:
-        	drawText("Level 3", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 4:
+                    drawText("Obstacle!!", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 8:
-        	drawText("Level 4", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 8:
+                    drawText("Magic Square", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 16:
-        	drawText("Level 5", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 16:
+                    drawText("Bad Apple", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 32:
-        	drawText("Level 6", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 32:
+                    drawText("Three Musketeers", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 64:
-        	drawText("Level 7", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 64:
+                    drawText("Man in the Middle", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 128:
-        	drawText("Level 8", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 128:
+                    drawText("Ok, This is Tough!", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	case 256:
-        	drawText("Level 9", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            case 256:
+                    drawText("Final Showdown", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
 
-        	default:
-        	drawText("Level Select", 0.47*WIDTH, 0.833*HEIGHT);
-        	break;
+            default:
+                    drawText("Level Select", 0.47*WIDTH, 0.833*HEIGHT);
+                    break;
         }
 
     }
