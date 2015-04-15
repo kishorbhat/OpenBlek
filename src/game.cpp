@@ -612,15 +612,17 @@ void mouse_motion(int x, int y)
 
     if (lvlSelect)
     {
+        int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
     	for (int i = 0; i < 9; i++)
     	{
-    		if (inCircle(x, y, circles[i].x, circles[i].y))
+    		if (inCircle(cg_x, cg_y, circles[i].x, circles[i].y))
     		{
-    			cout << circle_choose;
+    			cout << cg_x << " "<< cg_y << "\n";
     			circle_choose &= (int) pow(2, i);
+                break;
     		}
-    	    //else
-    		//	circle_choose = 511;
+    	    else
+    			circle_choose = 511;
     	}
     }
 }
