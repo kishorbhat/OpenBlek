@@ -46,7 +46,7 @@ void init()
     glLineWidth(5);
     glMatrixMode( GL_PROJECTION);
     gluOrtho2D(0.0,WIDTH,0.0,HEIGHT);
-    memset(arr,0,5000);
+    memset(arr,0,10000);
     glPointSize(20.0);
     genLevel();
 }
