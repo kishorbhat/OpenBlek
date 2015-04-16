@@ -16,7 +16,7 @@ int main( int argc, char ** argv)
     glutInitDisplayMode( GLUT_DOUBLE| GLUT_RGB);
     glutInitWindowPosition( 100, 100);
     glutInitWindowSize(WIDTH,HEIGHT);
-    glutCreateWindow( "Testing");
+    glutCreateWindow( "OpenBlek");
     glutFullScreen();
     init();
     glutDisplayFunc(myDisplay);
