@@ -106,7 +106,6 @@ void keyPressed(unsigned char key, int x, int y)
 
     if (key == 'r')
     {
-        cout << key << "\n";
         start_game = true;
         lvlSelect = false;
         play_game = false;
@@ -149,7 +148,6 @@ void myMouseStat(int button,int state,int x, int y)
         else if (lvlSelect)
         {
             int fl = (int)((float) log10(circle_choose) / (float) log10(2));
-            cout << fl << "\n";
             if (fl <= 8)
             {
                 level = fl;
