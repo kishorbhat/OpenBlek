@@ -38,7 +38,7 @@ bool checkCollision(int xp, int yp)
 bool inCircle(int xp, int yp, float xc, float yc)
 {
 	double r = 0.083 * WIDTH;
-	if (sqrt(pow((xc - xp), 2) + pow((yc - yp), 2)) <= r)
+	if ((xc - xp)*(xc-xp) + (yc - yp)*(yc-yp) <= r*r )
 		return true;
 	return false;
 }
