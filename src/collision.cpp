@@ -10,7 +10,7 @@ bool checkCollision(int xp, int yp)
         xc = circles[i].x;
         yc = circles[i].y;
         r = circles[i].r;
-        if (sqrt(pow((xc - xp), 2) + pow((yc - yp), 2)) <= r)
+        if ((xc - xp)*(xc-xp) + (yc - yp)*(yc-yp) <= r*r )
         {
             if(circles[i].hit==false)
                 collected--;
