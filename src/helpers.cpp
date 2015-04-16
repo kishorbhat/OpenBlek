@@ -3,8 +3,9 @@
 //Function to reset all parameters involved in the game.
 void resetAll()
 {
-    memset(arr,0,5000);
+    memset(arr,0,10000);
     z=0;
+    ptr=0;
     next_level=false;
     if(play_game||lvlSelect)
         start_game=false;
