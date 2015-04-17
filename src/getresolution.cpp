@@ -19,7 +19,7 @@ string GetStdoutFromCommand(string cmd)
 }
 
 //Function to retrieve current system resolution. This is later used to draw appropriately sized circles and lines.
-void findresoulution()
+void findresolution()
 {
     string s = "xrandr|grep '*'";
     string p = GetStdoutFromCommand(s);
