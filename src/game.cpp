@@ -11,7 +11,7 @@
 //Main Function of the program.
 int main( int argc, char ** argv)
 {
-    findresoulution();
+    findresolution();
     glutInit( &argc, argv);
     glutInitDisplayMode( GLUT_DOUBLE| GLUT_RGB);
     glutInitWindowPosition( 100, 100);
