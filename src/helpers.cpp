@@ -183,7 +183,7 @@ void myPressedMove(int x,int y)
         addValue(x,y);
 }
 
-//Passively tracks cursor movement.
+//Function passed to passive mouse function to track user movement.
 void mouse_motion(int x, int y)
 {
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
