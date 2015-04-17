@@ -1,6 +1,7 @@
 #include "../includes/declarations.h"
 
-//Function used to draw circles on screen.
+
+//Draw circles on screen.
 void circle(float x, float y, float r, int segments, bool obs)
 {
     glBegin( GL_TRIANGLE_FAN );
@@ -19,7 +20,7 @@ void circle(float x, float y, float r, int segments, bool obs)
     glEnd();
 }
 
-//Function used to draw the pattern in black color.
+//Draw the pattern in black color.
 void drawLines(int x)
 {
     glBegin(GL_LINE_STRIP);
@@ -48,7 +49,7 @@ void drawLines(int x)
             reflectionr=true;
         }
         glVertex2f(newx,arr[i][1]);
-        if(x!=z-1&&red_black==0)
+        if(x!=z-1&&black_white==0)
             checkCollision(newx+transx,arr[i][1]+transy);
         if(i==x-1 && multflag)
         {
@@ -61,8 +62,8 @@ void drawLines(int x)
     glEnd();
 }
 
-//Function used to provide an erasing effect to the drawn pattern.
-void drawBlackLines(int x)
+//Provide an erasing effect to the drawn pattern.
+void drawWhiteLines(int x)
 {
     glBegin(GL_LINE_STRIP);
     glColor3f(245.0,245.0,245.0);
@@ -105,7 +106,7 @@ void drawBlackLines(int x)
     glEnd();
 }
 
-//Function used to check which decides the circles to draw.
+//Decide and draw the right circles.
 void drawCircles()
 {
     for (int i = 0; i < num_circles; i++)

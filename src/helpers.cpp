@@ -12,7 +12,7 @@ void resetAll()
     transx=0;
     transy=0;
     num_circles=0;
-    red_black=0;
+    black_white=0;
     mult=1;
     multflag=false;
     leftwall=true;
@@ -28,11 +28,11 @@ void resetAll()
     genLevel();
 }
 
-//Function to initiliaze to variables.
+//Function to initialize project variables.
 void init()
 {
     glClearColor( 245.0, 245.0, 245.0, 1.0);
-    red_black=0;
+    black_white=0;
     next_level=false;
     start_game=true;
     level=0;
@@ -44,9 +44,9 @@ void init()
     reflectionl=false;
     reflectionr=false;
     glLineWidth(5);
-    glMatrixMode( GL_PROJECTION);
+    glMatrixMode(GL_PROJECTION);
     gluOrtho2D(0.0,WIDTH,0.0,HEIGHT);
-    memset(arr,0,5000);
+    memset(arr,0,10000);
     glPointSize(20.0);
     genLevel();
 }
@@ -183,7 +183,7 @@ void myPressedMove(int x,int y)
         addValue(x,y);
 }
 
-//Function passed to passive mouse function to track user movement.
+//Passively tracks cursor movement.
 void mouse_motion(int x, int y)
 {
     int cg_x = getOpenGLX(x), cg_y = getOpenGLY(y);
@@ -218,17 +218,17 @@ void mouse_motion(int x, int y)
 //Timer function to update variables in realtime.
 void myTimer(int t)
 {
-    if(ptr!=z&&red_black==0)
+    if(ptr!=z&&black_white==0)
     {
         ptr++;
-        blackptr=0;
+        whiteptr=0;
         ptrsave=ptr;
     }
-    else if(ptr==z&&red_black==1)
+    else if(ptr==z&&black_white==1)
         ptr=0;
     else
     {
-        blackptr++;
+        whiteptr++;
         ptr=0;
     }
     glutTimerFunc(9,myTimer,0);

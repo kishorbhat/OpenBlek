@@ -10,7 +10,7 @@ void drawText(char const *str,float x,float y)
     glRasterPos2f(x,y);
     for(i=0;i<len;i++)
         if (fl)
-            glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,str[i]);
+            glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, str[i]);
         else
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, str[i]);
 }
@@ -29,7 +29,7 @@ void drawStrokeText(char*string,int x,int y,int z)
   
       for (c=string; *c != '\0'; c++)
       {
-            glutStrokeCharacter(GLUT_STROKE_MONO_ROMAN , *c);
+            glutStrokeCharacter(GLUT_STROKE_MONO_ROMAN, *c);
       }
       glPopMatrix();
 }

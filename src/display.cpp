@@ -1,5 +1,6 @@
 #include "../includes/declarations.h"
 
+
 // Main display function passed to glutMainLoop.
 void myDisplay()
 {
@@ -115,9 +116,9 @@ void myDisplay()
         if(flag)
         {
             drawLines(z-1);
-            blackptr=0;
+            whiteptr=0;
             ptr=0;
-            red_black=1;
+            black_white=1;
             ptrsave=z;
         }
         if(!flag)
@@ -126,11 +127,11 @@ void myDisplay()
             {
 
                 glPushMatrix();
-                    if(red_black==0)
+                    if(black_white==0)
                     {
                         if(ptr==z-1)
                         {
-                            red_black=1;
+                            black_white=1;
                         }
                         else
                         {
@@ -141,11 +142,11 @@ void myDisplay()
                     }
                     else
                     {
-                        if(blackptr==z-1)
+                        if(whiteptr==z-1)
                         {
                         	transx+=mult*(arr[z-1][0]-arr[0][0]);
                             transy+=(arr[z-1][1]-arr[0][1]);
-                            red_black=0;
+                            black_white=0;
                             if(reflectionr && rightwall )
                             {
                             	reflectionr=false;
@@ -166,7 +167,7 @@ void myDisplay()
                         	drawCircles();
                         	glTranslatef(transx,transy,0);
                         	drawLines(ptrsave);
-                        	drawBlackLines(blackptr);
+                        	drawWhiteLines(whiteptr);
                         }
                     }
                 glPopMatrix();

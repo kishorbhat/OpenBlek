@@ -1,6 +1,7 @@
 #include "../includes/declarations.h"
 
-//Function to generate various levels of the program.
+
+//Generate various levels of the program.
 void genLevel()
 {
     if(level==0)
@@ -120,5 +121,4 @@ void genLevel()
         collected=7;
         num_circles=15;
     }
-     
 }

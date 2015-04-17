@@ -8,15 +8,16 @@
 #include "genlevel.cpp"
 #include "drawobjects.cpp"
 
-//Main Function of the program.
+
+//Main function
 int main( int argc, char ** argv)
 {
     findresolution();
-    glutInit( &argc, argv);
-    glutInitDisplayMode( GLUT_DOUBLE| GLUT_RGB);
-    glutInitWindowPosition( 100, 100);
-    glutInitWindowSize(WIDTH,HEIGHT);
-    glutCreateWindow( "Testing");
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE| GLUT_RGB);
+    glutInitWindowPosition(100, 100);
+    glutInitWindowSize(WIDTH, HEIGHT);
+    glutCreateWindow("OpenBlek");
     glutFullScreen();
     init();
     glutDisplayFunc(myDisplay);

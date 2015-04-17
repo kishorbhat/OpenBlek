@@ -16,11 +16,11 @@ double arr[5000][2];
 int z=0;
 int flag=0;
 float radius=0.03;
-int ptr=0, blackptr=0, ptrsave=0;
+int ptr=0, whiteptr=0, ptrsave=0;
 int temp_bit=1;
 int transx=0,transy=0;
 float color[3][3]={{1.0,1.0,1.0},{1.0,1.0,0.0},{0.0,1.0,0.0}};
-int red_black;
+int black_white;
 int collected;
 int WIDTH, HEIGHT;
 bool next_level;
@@ -46,7 +46,6 @@ public:
     float x;
     float y;
     float r;
-    int level;
     bool hit;
     bool obstacle;
     void setVal(float xc, float yc, float rad, bool obs)
@@ -83,7 +82,7 @@ float getOpenGLY(int);
 
 void drawLines(int);
 
-void drawBlackLines(int);
+void drawWhiteLines(int);
 
 void addValue(int,int);
 
