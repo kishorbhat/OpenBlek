@@ -28,7 +28,7 @@ void resetAll()
     genLevel();
 }
 
-//Function to initiliaze to variables.
+//Function to initiliaze variables.
 void init()
 {
     glClearColor( 245.0, 245.0, 245.0, 1.0);
@@ -78,7 +78,7 @@ void addValue(int x,int y)
     }
 }
 
-//Detects which key is pressed and sets appropriate flags.
+//Function which detects which key is pressed and sets appropriate flags.
 void keyPressed(unsigned char key, int x, int y)
 {
     if (key == 'm')
