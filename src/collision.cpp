@@ -36,6 +36,7 @@ bool checkCollision(int xp, int yp)
 bool inCircle(int xp, int yp, float xc, float yc)
 {
 	double r = 0.083 * WIDTH;
+    // Calculating if the line has reached inner point of circle, computing (x1-x2)**2 + (y1-y2)**2 < r**2
 	if ((xc - xp)*(xc-xp) + (yc - yp)*(yc-yp) <= r*r )
 		return true;
 	return false;
